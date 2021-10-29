@@ -1,5 +1,5 @@
-const PofToken = artifacts.require("PofToken");
+const PoiToken = artifacts.require("PoiToken");
 
 module.exports = function (deployer) {
-  deployer.deploy(PofToken);
+  deployer.deploy(PoiToken, 1000000);
 };
