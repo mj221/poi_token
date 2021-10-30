@@ -49,7 +49,7 @@ contract PoiToken {
         balanceOf[_from] -= _value;
         balanceOf[_to] += _value;
 
-        allowance[_from][msg.sender] = _value;
+        allowance[_from][msg.sender] -= _value;
 
         emit Transfer(_from, _to, _value);
         return true;
