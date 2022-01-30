@@ -139,6 +139,10 @@ App = {
             $('form').trigger('reset')
             // $('#loader').hide();
             // $('#content').show();
+        }).catch(function(error){
+            // refresh page when metamask denies transaction
+            console.log("It's an error");
+            App.render();
         })
     }
 }
