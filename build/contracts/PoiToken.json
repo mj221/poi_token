@@ -9419,12 +9419,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x3bAa35959c2c9A668B8b8339d0bF2f187217226D",
-      "transactionHash": "0x32dd52eee6564beddad572cf8383ab2c6716ecafb8feb86c4fd064eb53ddaf90"
+      "address": "0x6237Ac7AbFd431E255A95DA5568167CC3925ab14",
+      "transactionHash": "0x1035c375a89ee7b33f692b631e038db3443ec38e2fd71c7e6932dc7d4c354f88"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-01T01:51:43.995Z",
+  "updatedAt": "2022-01-24T13:03:22.397Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

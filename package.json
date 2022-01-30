@@ -2,7 +2,7 @@
     "name": "poi-token-sale",
     "version": "1.0.0",
     "description": "Poi Token Sale ICO",
-    "main": "truffle.js",
+    "main": "truffle-config.js",
     "directories": {
         "test": "test"
     },
