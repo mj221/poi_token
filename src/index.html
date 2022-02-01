@@ -7,14 +7,51 @@
         <title>Poi Token ICO Sale</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
     </head>
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        li a:hover{
+          text-decoration: none;
+          color: white;
+          background-color: #111;
+        }
+        .active {
+          background-color: #04AA6D;
+          
+        }
+    </style>
     <body>
+        <ul>
+            <li><a href="">POI TOKEN ICO</a></li>        
+            <li style="float:right">
+                <button id = "account-header" type="submit" onclick= "App.initWeb3();" class="btn btn-primary btn-lg" style="background-color:#04AA6D; border-color:#04AA6D; margin-right: 2.5px; margin-top:2.5px"> Connect Wallet</button>
+                
+            </li>
+        </ul>
         <!-- <h1> POI TOKEN ICO SALE</h1> -->
         <div class="container" style="width: 650px;">
             <div class="row">
                 <!--  -->
                 <div class="col-lg-12">
+                    <hr/>
                     <h1 class="text-center">POI TOKEN ICO SALE</h1>
                     <hr/>
                     <br/>
@@ -23,6 +60,9 @@
                 <div id="loader">
                     <p class="text-center">Loading..</p>
                 </div>
+                <!-- <div id="connecting">
+                    <p class="text-center">Connect MetaMask Wallet</p>
+                </div> -->
                 <!--  -->
                 <div id="content" class="text-center" style= "display: none;">
                     <p>
@@ -31,13 +71,13 @@
                     </p>
                     <br/>
                     <!--  -->
-                    <form onSubmit= "App.buyTokens(); return false;" role="form">
+                    <form id="form2" onSubmit= "App.buyTokens(); return false;" role="form">
                         <div class="form-group">
                             <div class="input-group">
                                 <input id="numberOfTokens" class="form-control input-lg" type="number" name="number" value="1" min="1" pattern="[0-9]">
                                 </input>
                                 <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-primary btn-lg"> Buy Tokens</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" style="background-color:#04AA6D; border-color:#04AA6D"> Buy Tokens</button>
                                 </span>
                             </div>
                         </div>

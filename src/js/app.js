@@ -4,18 +4,19 @@ App = {
     contracts: {},
     account: '0x0',
     loading: false,
+    connected: false,
     tokenPrice: 1000000000000000,
     tokensSold: 0,
     tokensAvailable: 750000,
 
     init: function(){
         console.log("app.js loaded");
-        return App.initWeb3();
+        return true;
     },
-    initWeb3: function(){
+    async initWeb3(){
         if (window.web3) {
             // If a web3 instance is already provided by Meta Mask.
-            window.ethereum.enable();
+            await window.ethereum.enable();
             App.web3Provider = web3.currentProvider;
             web3 = new Web3(App.web3Provider);
         } else {
@@ -23,6 +24,8 @@ App = {
             App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
             web3 = new Web3(App.web3Provider);
         }
+        App.connected = false;
+        connected = true;
         return App.initContracts();
     },
     initContracts: function(){
@@ -57,7 +60,7 @@ App = {
                 console.log("event triggered", event);
                 App.render();
             })
-        })
+        });
     },
     render: function(){
         // Prevent double loading
@@ -75,11 +78,16 @@ App = {
         // Load account data 
         web3.eth.getCoinbase(function(err, account){
             if (err === null){
-                // console.log("account:", account);
+                console.log("account:", account);
                 App.account = account;
-                $('#accountAddress').html("Your Account: " + account);
+                // $('#accountAddress').html("Your Account: " + account);
+                $('#account-header').html(App.account);
             }
-        })
+        });
+        
+        // if(App.account != null){
+        //     location.reload();
+        // }
         // console.log("P1!!!");
         // Load token sale contract
         App.contracts.PoiTokenSale.deployed().then(function(instance){
@@ -144,7 +152,10 @@ App = {
             console.log("It's an error");
             App.render();
         })
-    }
+    },
+    // connectWallet: function(){
+    //     App.connected 
+    // }
 }
 
 // load windows, initialise App
