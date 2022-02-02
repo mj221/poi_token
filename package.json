@@ -7,7 +7,8 @@
         "test": "test"
     },
     "scripts": {
-        "dev": "lite-server"
+        "dev": "lite-server",
+        "start": "npm run dev"
     },
     "author": "MJ",
     "license": "ISC",
