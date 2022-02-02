@@ -18,10 +18,13 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('truffle-hdwallet-provider-privkey');
+const privateKey = "39aaaaef761e65ecbd44bd5659d162fe560a98b7f0809c9e97783bd76e9f83e6";
+const endpointUrl = "https://goerli.infura.io/v3/207d5cc2a60f48769b7a195e6702f120";
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+
 
 module.exports = {
   /**
@@ -46,6 +49,17 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+    goerli:{
+      provider: function(){
+        return new HDWalletProvider(
+          [privateKey],
+          endpointUrl
+        )
+      },
+      gas: 5000000,
+      gasPrice: 25000000000,
+      network_id: 5
+    }
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
