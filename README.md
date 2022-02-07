@@ -2,7 +2,8 @@ ERC-20 token (a.k.a POI token) ICO Sale website deployed on the Goerli Ethereum 
 
 ![Screen Shot 2022-02-07 at 11 32 46 am](https://user-images.githubusercontent.com/50122869/152711509-99aa2166-88b1-4cdd-ba7c-c8558902a26e.png)
 
-![Screen Shot 2022-02-07 at 11 34 57 am](https://user-images.githubusercontent.com/50122869/152711642-ccf08f99-b644-4239-add3-364fc3b8dbea.png)
+![Screen Shot 2022-02-07 at 11 49 57 am](https://user-images.githubusercontent.com/50122869/152712624-266d45de-b735-43ab-a797-d889fac96f1a.png)
+
 
 
 ```
