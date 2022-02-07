@@ -10,3 +10,5 @@ Token contract can be found at https://goerli.etherscan.io/token/0x91FDAC4A36466
 
 Token Sale contract can be found at https://goerli.etherscan.io/address/0x88F382EA5792b6006ADd2412E24195AB1C46C479
 ```
+
+Use MetaMask enabled browser at https://mj221.github.io/poi_token/
