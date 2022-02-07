@@ -4,7 +4,6 @@ App = {
     contracts: {},
     account: '0x0',
     loading: false,
-    connected: false,
     tokenPrice: 1000000000000000,
     tokensSold: 0,
     tokensAvailable: 750000,
@@ -14,18 +13,16 @@ App = {
         return true;
     },
     async initWeb3(){
-        if (window.web3) {
-            // If a web3 instance is already provided by Meta Mask.
-            await window.ethereum.enable();
+        if (window.ethereum) {
+            window.web3 = new Web3(window.ethereum)
+            await window.ethereum.enable()
             App.web3Provider = web3.currentProvider;
-            web3 = new Web3(App.web3Provider);
-        } else {
-            // Specify default instance if no web3 instance provided
+        } else if(window.web3){
             App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-            web3 = new Web3(App.web3Provider);
+            window.web3 = new Web3(App.web3Provider)
+        }else{
+            window.alert("Non-Ethereum browser detected. Try MetaMask.")
         }
-        App.connected = false;
-        connected = true;
         return App.initContracts();
     },
     initContracts: function(){
